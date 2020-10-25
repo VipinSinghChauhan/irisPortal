@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>Iris</title>
+    <style>
+        .container {
+            /* border: 2px solid black; */
+            background-color: cornsilk;
+            width: 100%;
+            margin-top: 100px;
+        }
+
+        input {
+            width: 300px;
+        }
+    </style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body style="background-color: coral;">
+    <div class="container" id="image">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="http://localhost:5000/" method="post" id="from" onsubmit="return validateForm($event)">
+                    <div class="form-group">
+                        <label for="sepal_length">Sepal length</label>
+                        <input type="text" class="form-control" name="sepal_length" style="width:300px" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sepal_length">Sepal width</label>
+                        <input type="text" class="form-control" name="sepal_width" style="width:300px" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sepal_length">Petal length</label>
+                        <input type="text" class="form-control" name="petal_length" style="width:300px" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sepal_length">Petal width</label>
+                        <input type="text" class="form-control" name="petal_width" style="width:300px" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <h5 style="color:red">{{error}}</h5>
+                <!-- <div ></div> -->
+            </div>
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-4">
+                <!-- <h3></h3> -->
+                <h4>Predicted Output</h4>
+                <img src="{{output}}" width="280px" height="280px"
+                    style="margin-left:-90px;padding:5px;margin-top:-5px;" />
+                <h3>{{plant}}</h3>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+
+</html>
